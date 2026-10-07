@@ -3,6 +3,7 @@
 ## what do you need:
 ### Hard ware
 ![NodeMCU 1.0 ESP8266](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png=250x250)
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" width="200" height="400" />
 - NodeMCU 1.0 ESP8266
 
 ![NeoPixel LED strip](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png=250x250)
