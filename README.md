@@ -11,7 +11,7 @@
   - water-level sensor
   - temperature sensor
 
-Pictures in order of the list:
+- **Pictures in order of the list:**
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="100" height="200" />
