@@ -29,6 +29,47 @@
 - Wi-Fi network
 
 # Step 1 Install Libraries
+**Note to self DELETE LATER: **
+STEP 1
+- Step 1 goes about installing ESP8266 board like preferences then the link
+- Install esp8266 by ESP8266 Community
+- Test the connection
+
+STEP 2
+- Install the libraries (Just add the names)
+
+STEP 3 and 4
+- Start with led test or API? (Teacher said API but did LED)
+
+  API STEP
+  - Go to openweathermap
+  - Create account
+  - Keep private
+ 
+  LED STEP
+  - Do the following wiring
+  - Test code (show code)
+  - Show what code needs a change
+  - Uplaod the code
+  - Show how to get good port and trouble shooting
+  - Choose selected port
+  - Put upload speed to 115200
+  - Upload
+  - Troubleshooting
+ 
+STEP 5
+- Change the API code to make it work (WIFI, SSID)
+- Serial Monitor
+- Speed to 9600 baud
+- Look at display
+- Later comes temperature
+
+STEP 6
+- Connect the weather API to LED
+- Show code that needs adding
+
+TROUBLE SHOOTING
+
 Open Arduino IDE and install the following things:
 - ESP8266 board package
 - esp8266 By ESP8266 Community
