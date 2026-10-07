@@ -2,12 +2,22 @@
 
 ## what do you need:
 ### Hard ware
+![NodeMCU 1.0 ESP8266](image-url)
 - NodeMCU 1.0 ESP8266
+
+![NeoPixel LED strip](image-url)
 - NeoPixel LED strip
+
+![Physical push button](image-url)
 - Physical push button
+
+![USB cable](image-url)
 - USB cable
+
 - Useful later:
+  - ![water-level sensor](image-url)
   - water-level sensor
+  - ![temperature sensor](image-url)
   - temperature sensor
 
 ### Soft ware
