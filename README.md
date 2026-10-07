@@ -2,25 +2,30 @@
 
 ## what do you need:
 ### Hard ware
-- NodeMCU ESP8266
-- water-level sensor
-- temperature sensor
-- LEDs / NeoPixel LED strip
-- Physical button
+- NodeMCU 1.0 ESP8266
+- NeoPixel LED strip
+- Physical push button
+- USB cable
+- Useful later:
+- - water-level sensor
+  - temperature sensor
 
 ### Soft ware
 - Arduino IDE
 - ESP8266 board package
-- Library
-- LED library, (Adafruit NeoPixel)
+- Adafruit NeoPixel library
+- ArduinoJson library
 - Adafruit IO
-- Weather API
+- OpenWeatherMap account and API key
 - Wi-Fi network
 
-# Step 1 Install Libraries (make a short tutorial)
-Open Arduino IDE and install the following libraries:
-- Adafruit NeoPixel
-- ArduinoJson by Benoit Blanchon
+# Step 1 Install Libraries
+Open Arduino IDE and install the following things:
+- ESP8266 board package
+- esp8266 By ESP8266 Community
+- **Libraries:**
+- - Adafruit NeoPixel
+- - ArduinoJson by Benoit Blanchon
 
 Go to tools -> board -> NodeMCU 1.0 (ESP-12E Module)
 
