@@ -11,13 +11,13 @@
   - water-level sensor
   - temperature sensor
 
-Pictures in order of the list
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="100" height="200" />
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="100" height="200" />
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="100" height="200" />
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="100" height="200" />
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg" width="100" height="200" />
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png" width="100" height="200" />
+Pictures in order of the list:
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png" width="100" height="200" />
   
 ### Soft ware
 - Arduino IDE
