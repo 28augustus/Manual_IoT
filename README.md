@@ -5,7 +5,8 @@
 ![NodeMCU 1.0 ESP8266](image-url)
 - NodeMCU 1.0 ESP8266
 
-![NeoPixel LED strip](image-url)
+![NeoPixel LED strip](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png)
+
 - NeoPixel LED strip
 
 ![Physical push button](image-url)
