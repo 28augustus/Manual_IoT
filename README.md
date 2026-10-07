@@ -13,6 +13,7 @@
 - Physical push button
 
 ![USB cable](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg=250x250)
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="200" height="400" />
 - USB cable
 
 - Useful later:
