@@ -2,23 +2,23 @@
 
 ## what do you need:
 ### Hard ware
-![NodeMCU 1.0 ESP8266](image-url)
+![NodeMCU 1.0 ESP8266](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png)
 - NodeMCU 1.0 ESP8266
 
 ![NeoPixel LED strip](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png)
 
 - NeoPixel LED strip
 
-![Physical push button](image-url)
+![Physical push button](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpgl)
 - Physical push button
 
-![USB cable](image-url)
+![USB cable](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg)
 - USB cable
 
 - Useful later:
-  - ![water-level sensor](image-url)
+  - ![water-level sensor](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg)
   - water-level sensor
-  - ![temperature sensor](image-url)
+  - ![temperature sensor](https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png)
   - temperature sensor
 
 ### Soft ware
