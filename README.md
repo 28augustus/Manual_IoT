@@ -2,24 +2,23 @@
 
 ## what do you need:
 ### Hard ware
-NodeMCU 1.0 ESP8266
-<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="200" height="400" />
-
-NeoPixel LED strip
-<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="200" height="400" />
-
-Physical push button
-<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="200" height="400" />
-
-USB cable
-<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="200" height="400" />
+- NodeMCU 1.0 ESP8266
+- NeoPixel LED strip
+- Physical push button
+- USB cable
 
 - Useful later:
   - water-level sensor
-  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg" width="200" height="400" />
   - temperature sensor
-  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png" width="200" height="400" />
 
+Pictures in order of the list
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="200" height="400" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="200" height="400" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="200" height="400" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="200" height="400" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg" width="200" height="400" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png" width="200" height="400" />
+  
 ### Soft ware
 - Arduino IDE
 - ESP8266 board package
