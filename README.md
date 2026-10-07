@@ -7,7 +7,7 @@
 - Physical push button
 - USB cable
 - Useful later:
-- - water-level sensor
+  - water-level sensor
   - temperature sensor
 
 ### Soft ware
@@ -24,8 +24,8 @@ Open Arduino IDE and install the following things:
 - ESP8266 board package
 - esp8266 By ESP8266 Community
 - **Libraries:**
-- - Adafruit NeoPixel
-- - ArduinoJson by Benoit Blanchon
+  - Adafruit NeoPixel
+  - ArduinoJson by Benoit Blanchon
 
 Go to tools -> board -> NodeMCU 1.0 (ESP-12E Module)
 
