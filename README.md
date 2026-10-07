@@ -23,7 +23,7 @@
 Open Arduino IDE and install the following things:
 - ESP8266 board package
 - esp8266 By ESP8266 Community
-- **Libraries:**
+   **Libraries:**
 - - Adafruit NeoPixel
 - - ArduinoJson by Benoit Blanchon
 
