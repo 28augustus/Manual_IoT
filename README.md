@@ -42,7 +42,7 @@ STEP 1
 - Open Arduino IDE
 - Go to file > Prefferences
 - Paste this link in the section **Additional boards manager URLs:** http://arduino.esp8266.com/stable/package_esp8266com_index.json
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/1_preferences.png" width="100" height="200" />
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/1_preferences.png" />
 - Press OK
 - Go to Tool > Board > Boards Manager
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
