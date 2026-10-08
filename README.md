@@ -38,6 +38,16 @@ STEP 1
 - Install esp8266 by ESP8266 Community
 - Test the connection
 
+**KEEP**
+- Open Arduino IDE
+- Go to file > Prefferences
+- Paste this link in the section **Additional boards manager URLs:** http://arduino.esp8266.com/stable/package_esp8266com_index.json
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/1_preferences.png" width="100" height="200" />
+- Press OK
+- Go to Tool > Board > Boards Manager
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpg" width="100" height="200" />
+
+
 STEP 2
 - Install the libraries (Just add the names)
 
