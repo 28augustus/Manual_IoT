@@ -51,6 +51,8 @@
 
 # Step 3 Api OpenWeatherMap Key
 - Go to OpenWeatherMap [Link to OpenWeatherMap](https://openweathermap.org/)
+- Create an account or log in
+- Go to My API Keys (Picture needed)
 
 STEP 3 and 4
 - Start with led test or API? (Teacher said API but did LED)
