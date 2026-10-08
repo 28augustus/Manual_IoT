@@ -32,21 +32,17 @@
 - Wi-Fi network
 
 # Step 1 Install Libraries
-**Note to self DELETE LATER: **
-STEP 1
-- Step 1 goes about installing ESP8266 board like preferences then the link
-- Install esp8266 by ESP8266 Community
-- Test the connection
-
-**KEEP**
 - Open Arduino IDE
 - Go to file > Prefferences
 - Paste this link in the section **Additional boards manager URLs:** http://arduino.esp8266.com/stable/package_esp8266com_index.json
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/1_preferences.png" />
 - Press OK
 - Go to Tool > Board > Boards Manager
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
-
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
+- Install esp8266 by ESP8266 Community
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library_community.png" />
+- Then select NodeMCU 1.0 (ESP-12E Module)
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
 
 STEP 2
 - Install the libraries (Just add the names)
