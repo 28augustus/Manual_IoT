@@ -6,6 +6,7 @@
 - NeoPixel LED strip
 - Physical push button
 - USB cable
+- Jumper wires
 
 - Useful later:
   - water-level sensor
@@ -16,8 +17,10 @@
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/ledstrip.png" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/push_button.jpg" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="100" height="200" />
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/jumper_wires.jpg" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/watersensor.jpg" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/temphu.png" width="100" height="200" />
+
   
 ### Soft ware
 - Arduino IDE
