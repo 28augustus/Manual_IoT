@@ -45,7 +45,7 @@ STEP 1
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/1_preferences.png" width="100" height="200" />
 - Press OK
 - Go to Tool > Board > Boards Manager
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" width="100" height="200" />
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
 
 
 STEP 2
