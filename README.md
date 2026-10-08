@@ -31,7 +31,7 @@
 - OpenWeatherMap account and API key
 - Wi-Fi network
 
-# Step 1 Install Libraries
+# Step 1 Install ESP8266
 - Open Arduino IDE
 - Go to file > Prefferences
 - Paste this link in the section **Additional boards manager URLs:** http://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -44,8 +44,13 @@
 - Then select NodeMCU 1.0 (ESP-12E Module)
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
 
-STEP 2
-- Install the libraries (Just add the names)
+# Step 2 Install libraries
+- Install the libraries you can also find them at Sketch > Include library > Manage libraries
+- Install Adafruit NeoPixel
+- Install ArduinoJson by Benoit Blanchon
+
+# Step 3 Api OpenWeatherMap Key
+- Go to OpenWeatherMap [Link to OpenWeatherMap](https://openweathermap.org/)
 
 STEP 3 and 4
 - Start with led test or API? (Teacher said API but did LED)
