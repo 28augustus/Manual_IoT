@@ -42,6 +42,7 @@ Change the things i mention with:
 - Install ArduinoJson by Benoit Blanchon
 
 # Step 3 Api OpenWeatherMap Key
+We are gonna get the first API to get the weather info for the vase
 - [Go to OpenWeatherMap](https://openweathermap.org/)
 - Create an account or log in
 - get_api_key
@@ -207,6 +208,12 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 // **********************************************************************
 ```
 - **From now on if there is an issue look at the troubleshooting area to resolve your problems**
+- Upload the code, you need to connect your NodeMCU with a cable first then
+- Connect the cable directly to your computer/laptop
+- Then you may upload it
+- To see the data, go to: Tools > Serial Monitor
+- A tab will appear with hopefully the right data after uploading (see troubleshooting if not)
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
 
 # Step 4 Add Mateo API
 - Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Mateo)
@@ -366,6 +373,10 @@ void getOpenMeteoWeather() {
 }
 ```
 
+# Step 5 Test the code
+Upload the changed code and see what happens
+- Error? Look at Troubleshooting to resolve it
+
 # Troubleshooting
 ## API OpenWeatherMap
 - If you see this:
@@ -398,9 +409,25 @@ void getOpenMeteoWeather() {
   
 
 
-## Other API
-- Has Api already activated?
- 
+## Mateo API
+- You see this
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/error_mateo.png" />
+- Then you probaply have this too
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/mateo_error_cause_54_millis.png" />
+  Just paste this in the place to fix it
+```cpp
+void loop() {
+  if (millis() - lastConnectionTime > postInterval) {
+    lastConnectionTime = millis();
+
+    // API 1: OpenWeatherMap
+    makeHttpRequest();
+
+    // API 2: Open-Meteo
+    getOpenMeteoWeather();
+  }
+}
+```
 
 
 ## List of sources
