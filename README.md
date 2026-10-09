@@ -65,7 +65,142 @@
 - Keep private
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code_copy.png" />
  
+# Step 4 Open Arduino IDE
+use this starter code:
+```html
+/*
+ * Simpel weerstation met ESP8266 en OpenWeatherMap API
+ * D. de Vries
+ */
 
+#include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+
+// === CONFIGURATIE ===
+char ssid[] = "YOUR_WIFI_NAAM";         // Vul hier de naam van je WiFi in
+char pass[] = "YOUR_WIFI_WACHTWOORD";  // Vul hier je WiFi-wachtwoord in
+
+const char server[] = "api.openweathermap.org";
+String nameOfCity = "STAD,LANDCODE";    // Bijvoorbeeld "Amsterdam,NL"
+String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Vul hier je eigen API-sleutel in
+
+WiFiClient client;
+
+#define JSON_BUFF_DIMENSION 8192
+String text;
+
+unsigned long lastConnectionTime = 0;
+const unsigned long postInterval = 10000;  // elke 10 sec
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) { ; }
+
+  text.reserve(JSON_BUFF_DIMENSION);
+
+  Serial.println("Verbinden met WiFi...");
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi verbonden!");
+
+  // === Testbare API URL printen voor browser ===
+  String testURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + nameOfCity + "&APPID=" + apiKey + "&mode=json&units=metric&cnt=1";
+  Serial.println("\nTest deze URL in je browser:");
+  Serial.println(testURL);
+}
+
+void loop() {
+  if (millis() - lastConnectionTime > postInterval) {
+    lastConnectionTime = millis();
+    makeHttpRequest();
+  }
+}
+
+void makeHttpRequest() {
+  client.stop();
+
+  if (client.connect(server, 80)) {
+    client.println("GET /data/2.5/forecast?q=" + nameOfCity + "&APPID=" + apiKey + "&mode=json&units=metric&cnt=1 HTTP/1.1");
+    client.println("Host: api.openweathermap.org");
+    client.println("Connection: close");
+    client.println();
+
+    // Header overslaan
+    bool headerSkipped = false;
+    text = "";
+    unsigned long timeout = millis();
+    while (client.connected() && millis() - timeout < 10000) {
+      String line = client.readStringUntil('\n');
+      if (!headerSkipped && (line == "\r" || line == "")) {
+        headerSkipped = true;
+        text = client.readString();
+        break;
+      }
+    }
+
+    if (text.length() > 0) {
+      parseJson(text.c_str());
+    } else {
+      Serial.println("Fout: Geen JSON-data ontvangen!");
+    }
+
+    client.stop();
+  } else {
+    Serial.println("Fout: Verbinding met server mislukt!");
+  }
+}
+
+void parseJson(const char* jsonString) {
+  DynamicJsonDocument doc(JSON_BUFF_DIMENSION);
+  DeserializationError error = deserializeJson(doc, jsonString);
+  if (error) {
+    Serial.println("Fout bij JSON: " + String(error.c_str()));
+    return;
+  }
+
+  JsonArray list = doc["list"];
+  if (list.isNull() || list.size() < 1) {
+    Serial.println("Fout: JSON bevat geen voorspelling!");
+    return;
+  }
+
+  JsonObject forecast = list[0];
+  String city = doc["city"]["name"];
+  String weather = forecast["weather"][0]["main"];
+  String description = forecast["weather"][0]["description"];
+  float temp = forecast["main"]["temp"];
+
+  Serial.println("Voorspelling voor " + city + ": " + weather + " (" + description + ")");
+  Serial.println("Temperatuur: " + String(temp) + "°C");
+
+
+  weather.toUpperCase();
+
+  if (weather == "RAIN") {
+    Serial.println("Het gaat regenen! 🌧️");
+    // TODO: hier iets met je hardware doen
+  } else if (weather == "SNOW") {
+    Serial.println("Het gaat sneeuwen! ❄️");
+    // TODO: hier iets met je hardware doen
+  } else if (weather == "CLEAR") {
+    Serial.println("Het wordt zonnig! ☀️");
+    // TODO: hier iets met je hardware doen
+  } else if (description.indexOf("HAIL") != -1) {
+    Serial.println("Het gaat hagelen! 🌨️");
+    // TODO: hier iets met je hardware doen
+  } else if (weather == "CLOUDS") {
+    Serial.println("Het wordt bewolkt ☁️");
+    // TODO: hier iets met je hardware doen
+  } else {
+    Serial.println("Ander weer: " + description);
+    // TODO: hier iets met je hardware doen
+  }
+}
+```
  
 STEP 5
 - Change the API code to make it work (WIFI, SSID)
@@ -90,21 +225,6 @@ Open Arduino IDE and install the following things:
 Go to tools -> board -> NodeMCU 1.0 (ESP-12E Module)
 
 
-# Step 2 Connecting Api
-**Put the code in Arduino IDE**
-[API Code] (https://gist.github.com/icecream4all/7e9db0333f44192a6071eb73efe23329#file-nodemcu-weather-ino)
-
-Go to Openweather to get an API key:
-[Visit Open Weather] (https://openweathermap.org/api)
-
-- Press get API key and fill in the form
-- Go to My API Keys and make a Api key. Keep acces to the code, you will need it later to put it in the code (DO NOT SHARE YOUR KEY ON A PUBLIC SPACE)
-- Go to Arduino IDE and paste the given code (API Code)
-- Fill in the wifi name and password with **your** wifi/password name
-- Paste with String apiKey your api code that is not supposed to be shared in public
-
-
-
 # Step 3 Connecting LED strip
 - Get an LED strip
 - Look closely there are some indicators on the strip, like: +5v, Din and G
@@ -127,3 +247,4 @@ Go to Openweather to get an API key:
 - Designing Connected Products : UX for the Consumer Internet of Things van Claire Rowland". Bekijk via O'Reilly
 - OpenWeahterMap: https://openweathermap.org/
 - Troubleshooting with: [aichat.hva.nl](https://aichat.hva.nl/chat/)
+- Api code: https://gist.github.com/icecream4all/7e9db0333f44192a6071eb73efe23329#file-nodemcu-weather-ino
