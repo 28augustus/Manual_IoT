@@ -7,8 +7,6 @@ This manual explains how a Foster Vase prototype can retrieve external weather i
 - USB cable
 - Laptop/computer
 
-
-**Pictures in order of the list:**
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/nodemcu.png" alt="NodeMCU 1.0 ESP8266" width="100" height="200" />
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/usb_cable.jpg" width="100" height="200" />
 
