@@ -281,6 +281,90 @@ if (millis() - lastConnectionTime > postInterval) {
   getOpenMeteoWeather();
 }
 ```
+Paste this on the bottom of your code
+```cpp
+// ============================================================
+// OPEN-METEO API
+// ============================================================
+
+void getOpenMeteoWeather() {
+  Serial.println();
+  Serial.println("Requesting weather data from Open-Meteo...");
+
+  String url = "https://api.open-meteo.com/v1/forecast?latitude=";
+  url += latitude;
+  url += "&longitude=";
+  url += longitude;
+  url += "&current_weather=true";
+  url += "&daily=temperature_2m_max";
+  url += "&timezone=auto";
+
+  // Open-Meteo uses HTTPS.
+  BearSSL::WiFiClientSecure secureClient;
+
+  // This is acceptable for a classroom prototype.
+  // It avoids certificate problems on the ESP8266.
+  secureClient.setInsecure();
+
+  HTTPClient http;
+  http.setTimeout(10000);
+
+  if (!http.begin(secureClient, url)) {
+    Serial.println("OPEN-METEO ERROR: Could not start HTTPS connection.");
+    return;
+  }
+
+  int httpCode = http.GET();
+
+  if (httpCode == HTTP_CODE_OK) {
+    String response = http.getString();
+
+    DynamicJsonDocument doc(4096);
+
+    DeserializationError error = deserializeJson(doc, response);
+
+    if (error) {
+      Serial.println("OPEN-METEO ERROR: JSON could not be read.");
+      Serial.print("JSON error: ");
+      Serial.println(error.c_str());
+
+      http.end();
+      return;
+    }
+
+    if (doc["current_weather"].isNull()) {
+      Serial.println("OPEN-METEO ERROR: Current weather data was not found.");
+
+      http.end();
+      return;
+    }
+
+    float currentTemperature = doc["current_weather"]["temperature"];
+    float maximumTemperature = doc["daily"]["temperature_2m_max"][0];
+
+    Serial.println("OPEN-METEO SUCCESS");
+
+    Serial.print("Current temperature: ");
+    Serial.print(currentTemperature);
+    Serial.println(" C");
+
+    Serial.print("Maximum temperature today: ");
+    Serial.print(maximumTemperature);
+    Serial.println(" C");
+
+  } else {
+    Serial.println("OPEN-METEO ERROR: API request failed.");
+
+    Serial.print("HTTP status code: ");
+    Serial.println(httpCode);
+
+    Serial.print("API response: ");
+    Serial.println(http.getString());
+  }
+
+  http.end();
+}
+```
 
 # Troubleshooting
 ## API OpenWeatherMap
