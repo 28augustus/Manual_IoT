@@ -218,7 +218,19 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 
 # Troubleshooting
 ## API OpenWeatherMap
-- Select right port
+- If you see this:
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/wrong_port.png" />
+- Then you connected to the wrong port do the following:
+
+- Make sure you selected the right ModeMCU
+
+### Random symbols in Serial monitor
+- Check the baud, put it on 115200
+
+### If you only get dots then
+- Check Wi-Fi name and Password
+- Test with a hotspot for 2.4 GHz not your wifi, because ESP8266 supports 2.4 GHz Wi-Fi not a 5 GH-z only network
+  
 
 ## LED
 - Change the serial monitor
