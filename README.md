@@ -208,11 +208,13 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 ```
 - **From now on if there is an issue look at the troubleshooting area to resolve your problems**
 
+# Step 4 Add Mateo API
 - Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Mateo)
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
 - We are going to use Latitude and longitude from the Amsterdam area
 - [Link to mateo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
   If you see this, then we can go to the next step
-  
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/amsterdam_json.png" />
 
 # Troubleshooting
 ## API OpenWeatherMap
