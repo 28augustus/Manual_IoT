@@ -52,13 +52,13 @@
 # Step 3 Api OpenWeatherMap Key
 - [Go to OpenWeatherMap](https://openweathermap.org/)
 - Create an account or log in
-- Go to My API Keys (Picture needed)
-- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/get_api_key.png" />
 - get_api_key
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/get_api_key.png" />
 - Create account or sign in if you already have an account
 - If you can't sign in or make a new account (like me) Then it's probaply becasue you already have an account you can do the following:
 - - Choose forgot password and make a new password
 - Once you made an account click on API Key
+- If you dont see it you might need to click on get api again
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code.png" />
 - Then make sure you copy or safe your code safely
 - **DO NOT SHARE YOUR CODE ONLINE** (that's why mine is hidden)
