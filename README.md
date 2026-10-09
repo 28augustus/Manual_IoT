@@ -216,6 +216,72 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
   If you see this, then we can go to the next step
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/amsterdam_json.png" />
 
+- Find this code (it's near the first line of code)
+```cpp
+#include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+```
+
+Add this beneath it
+```cpp
+#include <ESP8266HTTPClient.h>
+#include <WiFiClientSecureBearSSL.h>
+```
+
+To get something like this:
+```cpp
+#include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClientSecureBearSSL.h>
+```
+
+Find
+```cpp
+String nameOfCity = "Amsterdam,NL";
+String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";
+```
+
+Add
+```cpp
+// Open-Meteo uses latitude and longitude instead of a city name.
+const char* latitude = "52.3676";
+const char* longitude = "4.9041";
+```
+
+to get:
+```cpp
+String nameOfCity = "Amsterdam,NL";
+String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";
+
+// Open-Meteo uses latitude and longitude instead of a city name.
+const char* latitude = "52.3676";
+const char* longitude = "4.9041";
+```
+
+Change this code (line 54):
+```cpp
+if (millis() - lastConnectionTime > postInterval) {
+  lastConnectionTime = millis();
+  makeHttpRequest();
+}
+```
+
+For this code:
+```cpp
+if (millis() - lastConnectionTime > postInterval) {
+  lastConnectionTime = millis();
+
+  // API 1: OpenWeatherMap
+  makeHttpRequest();
+
+  // API 2: Open-Meteo
+  getOpenMeteoWeather();
+}
+```
+
 # Troubleshooting
 ## API OpenWeatherMap
 - If you see this:
@@ -247,8 +313,6 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 - Test with a hotspot for 2.4 GHz not your wifi, because ESP8266 supports 2.4 GHz Wi-Fi not a 5 GH-z only network
   
 
-## LED
-- Change the serial monitor
 
 ## Other API
 - Has Api already activated?
