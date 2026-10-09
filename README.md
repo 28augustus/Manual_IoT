@@ -1,6 +1,5 @@
 # Manual Foster Vase
-We are gonna work with API's to show how the Vase can give accurate data via de API
-Change the things i mention with:
+This manual explains how a Foster Vase prototype can retrieve external weather information through APIs. The weather APIs support the connected-product concept, but they do not measure the exact conditions directly next to the vase [8].
 
 ## what do you need:
 ### Hard ware
@@ -36,10 +35,13 @@ Change the things i mention with:
 - Then select NodeMCU 1.0 (ESP-12E Module)
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
 
+**Source:** The ESP8266 board installation steps are based on the official ESP8266 Arduino Core documentation [1].
+
 # Step 2 Install libraries
 - Install the libraries you can also find them at Sketch > Include library > Manage libraries
-- Install Adafruit NeoPixel
 - Install ArduinoJson by Benoit Blanchon
+
+**Source:** ArduinoJson installation and documentation can be found in the official ArduinoJson documentation [2].
 
 # Step 3 Api OpenWeatherMap Key
 We are gonna get the first API to get the weather info for the vase
@@ -58,10 +60,12 @@ We are gonna get the first API to get the weather info for the vase
 - Keep private
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code_copy.png" />
  - Getting the API can take up to 2 hours before it activates
+
+**Source:** The OpenWeatherMap API key and forecast request are based on the OpenWeather documentation [3].
+
 # Step 4 Open Arduino IDE
 use this starter code:
 ```cpp
-/*
 /*
  * Simple weather station with ESP8266 and OpenWeatherMap API
  * Based on school code by D. de Vries
@@ -194,6 +198,9 @@ void parseJson(const char* jsonString) {
   Serial.println("Temperature: " + String(temp) + " C");
 }
 ```
+**API source:** The OpenWeatherMap forecast request in this code is based on the OpenWeatherMap API documentation [3].
+
+**Code reference:** The OpenWeatherMap starter code is based on school code by D. de Vries. During development, the NodeMCU weather code reference [6] was consulted.
 
 Change thsese parts to your own data
 ```cpp
@@ -215,12 +222,16 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 - A tab will appear with hopefully the right data after uploading (see troubleshooting if not)
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
 
-# Step 4 Add Mateo API
+
+# Step 5 Add Open-Meteo API
 Now we are going to add another API tho show what diffrent API's can do and how it can be useful for your Foster vase
-- Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Mateo)
+- Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Meteo)
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
+**Source:** The Open-Meteo URL structure and weather parameters are based on the official Open-Meteo API documentation [4].
+
+**HTTPS source:** The secure HTTPS connection uses the ESP8266 BearSSL WiFi client documentation [7].
 - We are going to use Latitude and longitude from the Amsterdam area
-- [Link to mateo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
+- [Link to Open-Meteo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
   If you see this, then we can go to the next step
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/amsterdam_json.png" />
 
@@ -269,24 +280,29 @@ const char* latitude = "52.3676";
 const char* longitude = "4.9041";
 ```
 
-Change this code (line 54):
+Find the complete void loop() function:
 ```cpp
-if (millis() - lastConnectionTime > postInterval) {
-  lastConnectionTime = millis();
-  makeHttpRequest();
+void loop() {
+  if (millis() - lastConnectionTime > postInterval) {
+    lastConnectionTime = millis();
+    makeHttpRequest();
+  }
 }
 ```
 
-For this code:
+
+Replace the entire void loop() function with this code:
 ```cpp
-if (millis() - lastConnectionTime > postInterval) {
-  lastConnectionTime = millis();
+void loop() {
+  if (millis() - lastConnectionTime > postInterval) {
+    lastConnectionTime = millis();
 
-  // API 1: OpenWeatherMap
-  makeHttpRequest();
+    // API 1: OpenWeatherMap
+    makeHttpRequest();
 
-  // API 2: Open-Meteo
-  getOpenMeteoWeather();
+    // API 2: Open-Meteo
+    getOpenMeteoWeather();
+  }
 }
 ```
 Paste this on the bottom of your code
@@ -373,10 +389,29 @@ void getOpenMeteoWeather() {
   http.end();
 }
 ```
+**Source:** The Open-Meteo URL structure and weather parameters are based on the official Open-Meteo API documentation [4].
 
-# Step 5 Test the code
+# Step 6 Test the code
 Upload the changed code and see what happens
 - Error? Look at Troubleshooting to resolve it
+
+- You should see something like this
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/serial_monitor_both_api_work.png" />
+
+# Step 7 Change the API update interval
+- Alr if you have everything done and figuerd out we can change some code because getting an api request every 10 seconds is a lot, for testing it is very useful, but for normal use it is too frequent
+
+Find this piece of code (line: 32):
+```cpp
+const unsigned long postInterval = 10000;
+```
+
+And change it to this (it will make the weather request every 10 minutes:
+```cpp
+const unsigned long postInterval = 600000;
+```
+
+- This way you will only get it every 10 minutes, you can change it lower or higher if you desire a diffrent setting
 
 # Troubleshooting
 ## API OpenWeatherMap
@@ -400,8 +435,14 @@ Upload the changed code and see what happens
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
 
 ### Random symbols in Serial monitor
-- Check the baud, put it on 115200
-  <img src="https://github.com/user-attachments/assets/f45dae0e-e7bb-4d53-be80-3601b99a312a" />
+There is a possibility that the Serial Monitor does not match the Baud rate in the code
+- Check the baud, put it on 9600 baud, because the code uses
+```cpp
+Serial.begin(9600);
+```
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/baud_check.png" />
+
+If you use a diffrent serial.begin() then change it to 9600
 
 
 ### If you only get dots then
@@ -410,11 +451,12 @@ Upload the changed code and see what happens
   
 
 
-## Mateo API
+## Open-Meteo API
 - You see this
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/error_mateo.png" />
 - Then you probaply have this too
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/mateo_error_cause_54_millis.png" />
+  The void loop has been deleted and a if statement can not be outside a void loop()
   Just paste this in the place to fix it
 ```cpp
 void loop() {
@@ -430,9 +472,23 @@ void loop() {
 }
 ```
 
-
 ## List of sources
-- Designing Connected Products : UX for the Consumer Internet of Things van Claire Rowland". Bekijk via O'Reilly
-- OpenWeahterMap: https://openweathermap.org/
-- Troubleshooting with and making the Arduino Code: [aichat.hva.nl](https://aichat.hva.nl/chat/)
-- Api code: https://gist.github.com/icecream4all/7e9db0333f44192a6071eb73efe23329#file-nodemcu-weather-ino
+### Use of AI
+HvA AI Chat was used to support troubleshooting, explain compiler errors and improve the clarity of this manual. The NodeMCU setup, code uploads, API tests, error tests and screenshots were completed and documented by the author (28augustus).
+## References
+
+[1] Arduino ESP8266 Community (n.d.) *Installing the ESP8266 Arduino Core*. Available at: https://arduino-esp8266.readthedocs.io/en/latest/installing.html (Accessed: 9 October 2026).
+
+[2] ArduinoJson (n.d.) *ArduinoJson documentation*. Available at: https://arduinojson.org/v6/doc/ (Accessed: 9 October 2026).
+
+[3] OpenWeather (n.d.) *5 day weather forecast API*. Available at: https://openweathermap.org/forecast5 (Accessed: 9 October 2026).
+
+[4] Open-Meteo (n.d.) *Weather Forecast API documentation*. Available at: https://open-meteo.com/en/docs (Accessed: 9 October 2026).
+
+[5] Hogeschool van Amsterdam (2026) *HvA AI Chat* [AI chatbot]. Available at: https://aichat.hva.nl/chat/ (Accessed: 9 October 2026).
+
+[6] icecream4all (n.d.) *NodeMCU weather Arduino code*. GitHub Gist. Available at: https://gist.github.com/icecream4all/7e9db0333f44192a6071eb73efe23329#file-nodemcu-weather-ino (Accessed: 9 October 2026).
+
+[7] ESP8266 Arduino Core (n.d.) *BearSSL WiFi secure client class*. Available at: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html (Accessed: 9 October 2026).
+
+[8] Rowland, C., Goodman, E., Charlier, M., Light, A. and Lui, A. (2015) *Designing Connected Products: UX for the Consumer Internet of Things*. Sebastopol, CA: O’Reilly Media.
