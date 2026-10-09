@@ -216,6 +216,7 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
 
 # Step 4 Add Mateo API
+Now we are going to add another API tho show what diffrent API's can do and how it can be useful for your Foster vase
 - Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Mateo)
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
 - We are going to use Latitude and longitude from the Amsterdam area
