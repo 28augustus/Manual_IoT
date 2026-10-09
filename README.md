@@ -122,3 +122,8 @@ Go to Openweather to get an API key:
   - Make the pin number correct
   - Fix LED amount
   - Upload code and see if you need to trouble shoot
+
+## List of sources
+- Designing Connected Products : UX for the Consumer Internet of Things van Claire Rowland". Bekijk via O'Reilly
+- OpenWeahterMap: https://openweathermap.org/
+- Troubleshooting with: [aichat.hva.nl](https://aichat.hva.nl/chat/)
