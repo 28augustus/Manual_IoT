@@ -6,6 +6,7 @@ Change the things i mention with:
 ### Hard ware
 - NodeMCU 1.0 ESP8266
 - USB cable
+- Laptop/computer
 
 
 - **Pictures in order of the list:**
@@ -16,11 +17,11 @@ Change the things i mention with:
 ### Soft ware
 - Arduino IDE
 - ESP8266 board package
-- Adafruit NeoPixel library
-- ArduinoJson library
-- Adafruit IO
+- ArduinoJson library by Benoit Blanchon
 - OpenWeatherMap account and API key
-- Wi-Fi network
+- Open-Meteo Forecast API
+- Wi-Fi network with 2.4 GHz support
+- Internet connection
 
 # Step 1 Install ESP8266
 - Open Arduino IDE
@@ -55,7 +56,7 @@ Change the things i mention with:
 - **DO NOT SHARE YOUR CODE ONLINE** (that's why mine is hidden)
 - Keep private
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code_copy.png" />
- 
+ - Getting the API can take up to 2 hours before it activates
 # Step 4 Open Arduino IDE
 use this starter code:
 ```cpp
@@ -207,7 +208,11 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 ```
 - **From now on if there is an issue look at the troubleshooting area to resolve your problems**
 
-- Change all the specific area's in your code
+- Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Mateo)
+- We are going to use Latitude and longitude from the Amsterdam area
+- [Link to mateo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
+  If you see this, then we can go to the next step
+  
 
 # Troubleshooting
 ## API OpenWeatherMap
