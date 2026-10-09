@@ -67,7 +67,7 @@
  
 # Step 4 Open Arduino IDE
 use this starter code:
-```html
+```cpp
 /*
  * Simpel weerstation met ESP8266 en OpenWeatherMap API
  * D. de Vries
