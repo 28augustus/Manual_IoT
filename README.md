@@ -201,6 +201,30 @@ void parseJson(const char* jsonString) {
   }
 }
 ```
+
+Change thsese parts to your own data
+```cpp
+// ******************* Change these *******************
+
+char ssid[] = "JOUW_WIFI_NAAM";
+char pass[] = "JOUW_WIFI_WACHTWOORD";
+
+String nameOfCity = "Amsterdam,NL";
+String apiKey = "JOUW_OPENWEATHERMAP_API_KEY";
+
+// **********************************************************************
+```
+
+
+# Troubleshooting
+## API OpenWeatherMap
+- Select right port
+
+## LED
+- Change the serial monitor
+
+## Other API
+- Has Api already activated?
  
 STEP 5
 - Change the API code to make it work (WIFI, SSID)
