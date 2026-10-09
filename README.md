@@ -1,5 +1,5 @@
 # Manual Foster Vase
-This manual explains how a Foster Vase prototype can retrieve external weather information through APIs. The weather APIs support the connected-product concept, but they do not measure the exact conditions directly next to the vase [8].
+This manual explains how a Foster Vase prototype can retrieve external weather information through APIs. The Foster Vase concept was developed using principles from *Designing Connected Products*, including the 3C’s and the 4 UI’s framework [8]. The weather APIs support the connected-product concept, but they do not measure the exact conditions directly next to the vase.
 
 ## what do you need:
 ### Hard ware
@@ -227,9 +227,7 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 Now we are going to add another API tho show what diffrent API's can do and how it can be useful for your Foster vase
 - Now if everything works and you see something like shown in this image we can move on to an extra API (Open-Meteo)
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
-**Source:** The Open-Meteo URL structure and weather parameters are based on the official Open-Meteo API documentation [4].
 
-**HTTPS source:** The secure HTTPS connection uses the ESP8266 BearSSL WiFi client documentation [7].
 - We are going to use Latitude and longitude from the Amsterdam area
 - [Link to Open-Meteo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
   If you see this, then we can go to the next step
@@ -390,6 +388,8 @@ void getOpenMeteoWeather() {
 }
 ```
 **Source:** The Open-Meteo URL structure and weather parameters are based on the official Open-Meteo API documentation [4].
+ 
+**HTTPS source:** The Open-Meteo HTTPS client setup is based on the ESP8266 BearSSL WiFi client documentation [7].
 
 # Step 6 Test the code
 Upload the changed code and see what happens
@@ -472,8 +472,8 @@ void loop() {
 }
 ```
 
-## List of sources
-### Use of AI
+
+## Use of AI
 HvA AI Chat was used to support troubleshooting, explain compiler errors and improve the clarity of this manual. The NodeMCU setup, code uploads, API tests, error tests and screenshots were completed and documented by the author (28augustus).
 ## References
 
