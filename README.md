@@ -1,9 +1,7 @@
 # Manual Foster Vase
 We are gonna work with API's to show how the Vase can give accurate data via de API
 Change the things i mention with:
-```cpp
-// ******************* YOUR DATA: CHANGE HERE *******************
-```
+
 ## what do you need:
 ### Hard ware
 - NodeMCU 1.0 ESP8266
