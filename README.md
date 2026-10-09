@@ -1,6 +1,21 @@
 # Manual Foster Vase
 This manual explains how a Foster Vase prototype can retrieve external weather information through APIs. The Foster Vase concept was developed using principles from *Designing Connected Products*, including the 3C’s and the 4 UI’s framework [8]. The weather APIs support the connected-product concept, but they do not measure the exact conditions directly next to the vase.
 
+## Goal
+
+The goal of this manual is to build and test a Foster Vase weather-data prototype with a NodeMCU ESP8266. The prototype retrieves outdoor weather information from OpenWeatherMap and Open-Meteo and displays the results in the Arduino Serial Monitor.
+
+## Checkpoints
+
+| Checkpoint | Result |
+|---|---|
+| Checkpoint 1 | The ESP8266 board package is installed and NodeMCU 1.0 is selected. |
+| Checkpoint 2 | An OpenWeatherMap API key is created. |
+| Checkpoint 3 | OpenWeatherMap weather data is visible in the Serial Monitor. |
+| Checkpoint 4 | The Open-Meteo JSON response is visible in a browser. |
+| Checkpoint 5 | OpenWeatherMap and Open-Meteo both return weather data in the Serial Monitor. |
+| Checkpoint 6 | The API update interval is changed from 10 seconds to 10 minutes. |
+
 ## what do you need:
 ### Hard ware
 - NodeMCU 1.0 ESP8266
@@ -33,6 +48,7 @@ This manual explains how a Foster Vase prototype can retrieve external weather i
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library_community.png" />
 - Then select NodeMCU 1.0 (ESP-12E Module)
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
+  *Checkpoint 1: NodeMCU 1.0 (ESP-12E Module) is selected in Arduino IDE.*
 
 **Source:** The ESP8266 board installation steps are based on the official ESP8266 Arduino Core documentation [1].
 
@@ -59,6 +75,7 @@ We are gonna get the first API to get the weather info for the vase
 - Keep private
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code_copy.png" />
  - Getting the API can take up to 2 hours before it activates
+ - *Checkpoint 2: An OpenWeatherMap API key was created. The key is hidden to keep it private.*
 
 **Source:** The OpenWeatherMap API key and forecast request are based on the OpenWeather documentation [3].
 
@@ -220,7 +237,7 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 - To see the data, go to: Tools > Serial Monitor
 - A tab will appear with hopefully the right data after uploading (see troubleshooting if not)
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/code_works_api.png" />
-
+*Checkpoint 3: OpenWeatherMap weather data is successfully displayed in the Serial Monitor.*
 
 # Step 5 Add Open-Meteo API
 Now we are going to add another API tho show what diffrent API's can do and how it can be useful for your Foster vase
@@ -231,6 +248,7 @@ Now we are going to add another API tho show what diffrent API's can do and how 
 - [Link to Open-Meteo forecast](https://api.open-meteo.com/v1/forecast?latitude=52.3676&longitude=4.9041&current_weather=true&daily=temperature_2m_max&timezone=auto)
   If you see this, then we can go to the next step
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/amsterdam_json.png" />
+  *Checkpoint 4: The Open-Meteo API returns a JSON response for the Amsterdam test location.*
 
 - Find this code (it's near the first line of code)
 ```cpp
@@ -396,6 +414,7 @@ Upload the changed code and see what happens
 
 - You should see something like this
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/serial_monitor_both_api_work.png" />
+  *Checkpoint 5: Both weather APIs return data successfully in the Serial Monitor.*
 
 # Step 7 Change the API update interval
 - Alr if you have everything done and figuerd out we can change some code because getting an api request every 10 seconds is a lot, for testing it is very useful, but for normal use it is too frequent
