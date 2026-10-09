@@ -50,28 +50,22 @@
 - Install ArduinoJson by Benoit Blanchon
 
 # Step 3 Api OpenWeatherMap Key
-- Go to OpenWeatherMap [Link to OpenWeatherMap](https://openweathermap.org/)
+- [Go to] (https://openweathermap.org/)
 - Create an account or log in
 - Go to My API Keys (Picture needed)
-
-STEP 3 and 4
-- Start with led test or API? (Teacher said API but did LED)
-
-  API STEP
-  - Go to openweathermap
-  - Create account
-  - Keep private
+- <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/get_api_key.png" />
+- get_api_key
+- Create account or sign in if you already have an account
+- If you can't sign in or make a new account (like me) Then it's probaply becasue you already have an account you can do the following:
+- - Choose forgot password and make a new password
+- Once you made an account click on API Key
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code.png" />
+- Then make sure you copy or safe your code safely
+- **DO NOT SHARE YOUR CODE ONLINE** (that's why mine is hidden)
+- Keep private
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/api_code_copy.png" />
  
-  LED STEP
-  - Do the following wiring
-  - Test code (show code)
-  - Show what code needs a change
-  - Uplaod the code
-  - Show how to get good port and trouble shooting
-  - Choose selected port
-  - Put upload speed to 115200
-  - Upload
-  - Troubleshooting
+
  
 STEP 5
 - Change the API code to make it work (WIFI, SSID)
