@@ -42,7 +42,7 @@
 - Install esp8266 by ESP8266 Community
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library_community.png" />
 - Then select NodeMCU 1.0 (ESP-12E Module)
-  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/install_esp_library.jpeg" />
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
 
 # Step 2 Install libraries
 - Install the libraries you can also find them at Sketch > Include library > Manage libraries
@@ -223,6 +223,7 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 - Then you connected to the wrong port do the following:
 
 - Make sure you selected the right ModeMCU
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
 
 ### Random symbols in Serial monitor
 - Check the baud, put it on 115200
