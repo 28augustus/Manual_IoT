@@ -239,6 +239,8 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 
 ### Random symbols in Serial monitor
 - Check the baud, put it on 115200
+  <img src="https://github.com/user-attachments/assets/f45dae0e-e7bb-4d53-be80-3601b99a312a" />
+
 
 ### If you only get dots then
 - Check Wi-Fi name and Password
