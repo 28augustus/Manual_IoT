@@ -50,7 +50,7 @@
 - Install ArduinoJson by Benoit Blanchon
 
 # Step 3 Api OpenWeatherMap Key
-- [Go to] (https://openweathermap.org/)
+- [Go to OpenWeatherMap](https://openweathermap.org/)
 - Create an account or log in
 - Go to My API Keys (Picture needed)
 - <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/get_api_key.png" />
