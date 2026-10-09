@@ -214,13 +214,25 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 
 // **********************************************************************
 ```
-
+- **From now on if there is an issue look at the troubleshooting area to resolve your problems**
 
 # Troubleshooting
 ## API OpenWeatherMap
 - If you see this:
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/wrong_port.png" />
 - Then you connected to the wrong port do the following:
+- Make sure your NodeMCU is plugged in with a cable
+- Open in Arduino tools > port and hover over it while the cable is plugged in
+- Make a picture or look at all the numers you are seeing
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/cable_port_in.png" />
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/cable_port_out.png" />
+- Remove the cable from your device and select Tools > port again
+- Look for the missing number or port, that is the port you need to select
+- Put the cable back in and select your port
+
+  - OTHER
+  - Use a diffrent USB cable
+  - Use a diffrent port on device
 
 - Make sure you selected the right ModeMCU
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/right_nodemcu.png" />
