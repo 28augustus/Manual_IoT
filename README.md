@@ -14,9 +14,9 @@ The goal of this manual is to build and test a Foster Vase weather-data prototyp
 | Checkpoint 3 | OpenWeatherMap weather data is visible in the Serial Monitor. |
 | Checkpoint 4 | The Open-Meteo JSON response is visible in a browser. |
 | Checkpoint 5 | OpenWeatherMap and Open-Meteo both return weather data in the Serial Monitor. |
-| Checkpoint 6 | Test the code. |
-| Checkpoint 7 | The API update interval is changed from 10 seconds to 10 minutes. |
-| Checkpoint 8 | Change the country to yours. |
+| Checkpoint 6 | The API update interval is changed from 10 seconds to 10 minutes. |
+| Checkpoint 7 | Change the country to yours. |
+
 
 ## what do you need:
 ### Hard ware
@@ -432,16 +432,21 @@ const unsigned long postInterval = 600000;
 ```
 
 - This way you will only get it every 10 minutes, you can change it lower or higher if you desire a diffrent setting
+*Checkpoint 6: Changed API interval.*
 
 # Step 8 Change the weather forecast data to your specified country
 So not everyone lives in Amsterdam, so what to do if you want another city? Change it.
 I tried changing it to Miami,US and altered both the OpenWeatherMap and Meteo. If you want to know your specific altitude and latitude then simply google it.
 This is the result:
 <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/changed_land_and_city.png" />
+*Checkpoint 7: weather forecast data has been changed.*
 
 **WARNING**
 Make sure you put the right altitude and latitude otherwise you get the wrong data from the wrong country.
 I tested with 1 number and it still works, only you dont get the right tempreatures like the previous time
+
+*image: weather forecast data has been changed the latitude and lontitude, country is Amsterdam,NL.*
+<img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/weather_amsterdam_and_wrong_la-lo.png" />
 
 # Troubleshooting
 ## API OpenWeatherMap
