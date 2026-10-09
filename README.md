@@ -206,11 +206,11 @@ Change thsese parts to your own data
 ```cpp
 // ******************* Change these *******************
 
-char ssid[] = "JOUW_WIFI_NAAM";
-char pass[] = "JOUW_WIFI_WACHTWOORD";
+char ssid[] = "YOUR_WIFI_NAAM";         // Put your own wifi name
+char pass[] = "YOUR_WIFI_WACHTWOORD";  // Put your own password
 
-String nameOfCity = "Amsterdam,NL";
-String apiKey = "JOUW_OPENWEATHERMAP_API_KEY";
+String nameOfCity = "STAD,LANDCODE";    // city and landcode example: "Amsterdam,NL"
+String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 
 // **********************************************************************
 ```
