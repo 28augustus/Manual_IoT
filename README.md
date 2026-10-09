@@ -225,7 +225,7 @@ String apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Put here your own API key
 - Open in Arduino tools > port and hover over it while the cable is plugged in
 - Make a picture or look at all the numers you are seeing
   <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/cable_port_in.png" />
-  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/cable_port_out.png" />
+  <img src="https://github.com/28augustus/Manual_IoT/blob/main/afbeeldingen/cable_port_out.jpeg" />
 - Remove the cable from your device and select Tools > port again
 - Look for the missing number or port, that is the port you need to select
 - Put the cable back in and select your port
